@@ -20,8 +20,7 @@
 git clone https://github.com/Hadesiak130-alt/UCPY.git
 ```
 
-2. Download python if haven't already
-
+2. Download [Python](https://www.python.org/downloads/) if haven't already
 3. Run the `main.py` file
 
 - Way 2:
