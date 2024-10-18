@@ -1,7 +1,8 @@
 import time
 
-conversion_factors = {
-    ('mcm', 'mm'): 0.001,
+# Conversion factors for length
+length_conversion_factors = {
+    ('mcm', 'mm'): 1000,
     ('mcm', 'cm'): 1e-4,
     ('mcm', 'dm'): 1e-5,
     ('mcm', 'm'): 1e-6,
@@ -23,7 +24,6 @@ conversion_factors = {
     ('mm', 'mi'): 6.2137e-7,
     
     ('cm', 'mm'): 10,
-    ('cm', 'mcm'): 10000,
     ('cm', 'cm'): 1,
     ('cm', 'dm'): 0.1,
     ('cm', 'm'): 0.01,
@@ -34,7 +34,6 @@ conversion_factors = {
     ('cm', 'mi'): 0.0000062137,
 
     ('dm', 'mm'): 100,
-    ('dm', 'mcm'): 100000,
     ('dm', 'cm'): 10,
     ('dm', 'dm'): 1,
     ('dm', 'm'): 0.1,
@@ -45,7 +44,6 @@ conversion_factors = {
     ('dm', 'mi'): 0.0000621371,
 
     ('m', 'mm'): 1000,
-    ('m', 'mcm'): 1000000,
     ('m', 'cm'): 100,
     ('m', 'dm'): 10,
     ('m', 'm'): 1,
@@ -56,7 +54,6 @@ conversion_factors = {
     ('m', 'mi'): 0.000621371,
 
     ('km', 'mm'): 1000000,
-    ('km', 'mcm'): 1e+9,
     ('km', 'cm'): 100000,
     ('km', 'dm'): 10000,
     ('km', 'm'): 1000,
@@ -67,7 +64,6 @@ conversion_factors = {
     ('km', 'mi'): 0.621371,
 
     ('in', 'mm'): 25.4,
-    ('in', 'mcm'): 25400,
     ('in', 'cm'): 2.54,
     ('in', 'dm'): 0.254,
     ('in', 'm'): 0.0254,
@@ -78,7 +74,6 @@ conversion_factors = {
     ('in', 'mi'): 0.0000157828,
 
     ('ft', 'mm'): 304.8,
-    ('ft', 'mcm'): 304800,
     ('ft', 'cm'): 30.48,
     ('ft', 'dm'): 3.048,
     ('ft', 'm'): 0.3048,
@@ -89,7 +84,6 @@ conversion_factors = {
     ('ft', 'mi'): 0.000189394,
 
     ('yd', 'mm'): 914.4,
-    ('yd', 'mcm'): 914400,
     ('yd', 'cm'): 91.44,
     ('yd', 'dm'): 9.144,
     ('yd', 'm'): 0.9144,
@@ -100,7 +94,6 @@ conversion_factors = {
     ('yd', 'mi'): 0.000568182,
 
     ('mi', 'mm'): 1609344,
-    ('mi', 'mcm'): 1.609344e+9,
     ('mi', 'cm'): 160934.4,
     ('mi', 'dm'): 16093.44,
     ('mi', 'm'): 1609.34,
@@ -111,23 +104,114 @@ conversion_factors = {
     ('mi', 'mi'): 1,
 }
 
-def convert_units(input_unit, output_unit, value):
-    if (input_unit, output_unit) in conversion_factors:
-        return value * conversion_factors[(input_unit, output_unit)]
+# Conversion factors for volume
+volume_conversion_factors = {
+    ('L', 'mL'): 1000,
+    ('L', 'cm³'): 1000,
+    ('L', 'm³'): 0.001,
+    ('L', 'gal'): 0.264172,
+    ('L', 'qt'): 1.05669,
+    ('L', 'pt'): 2.11338,
+    ('L', 'fl oz'): 33.814,
+    
+    ('mL', 'L'): 0.001,
+    ('mL', 'cm³'): 1,
+    ('mL', 'm³'): 1e-6,
+    ('mL', 'gal'): 0.000264172,
+    ('mL', 'qt'): 0.00105669,
+    ('mL', 'pt'): 0.00211338,
+    ('mL', 'fl oz'): 0.033814,
+    
+    ('cm³', 'L'): 0.001,
+    ('cm³', 'mL'): 1,
+    ('cm³', 'm³'): 1e-6,
+    ('cm³', 'gal'): 0.000264172,
+    ('cm³', 'qt'): 0.00105669,
+    ('cm³', 'pt'): 0.00211338,
+    ('cm³', 'fl oz'): 0.033814,
+
+    ('m³', 'L'): 1000,
+    ('m³', 'mL'): 1e6,
+    ('m³', 'cm³'): 1e6,
+    ('m³', 'gal'): 264.172,
+    ('m³', 'qt'): 1056.69,
+    ('m³', 'pt'): 2113.38,
+    ('m³', 'fl oz'): 33814,
+
+    ('gal', 'L'): 3.78541,
+    ('gal', 'mL'): 3785.41,
+    ('gal', 'cm³'): 3785.41,
+    ('gal', 'm³'): 0.00378541,
+    ('gal', 'qt'): 4,
+    ('gal', 'pt'): 8,
+    ('gal', 'fl oz'): 128,
+
+    ('qt', 'L'): 0.946353,
+    ('qt', 'mL'): 946.353,
+    ('qt', 'cm³'): 946.353,
+    ('qt', 'm³'): 0.000946353,
+    ('qt', 'gal'): 0.25,
+    ('qt', 'pt'): 2,
+    ('qt', 'fl oz'): 32,
+
+    ('pt', 'L'): 0.473176,
+    ('pt', 'mL'): 473.176,
+    ('pt', 'cm³'): 473.176,
+    ('pt', 'm³'): 0.000473176,
+    ('pt', 'gal'): 0.125,
+    ('pt', 'qt'): 0.5,
+    ('pt', 'fl oz'): 16,
+
+    ('fl oz', 'L'): 0.0295735,
+    ('fl oz', 'mL'): 29.5735,
+    ('fl oz', 'cm³'): 29.5735,
+    ('fl oz', 'm³'): 2.95735e-5,
+    ('fl oz', 'gal'): 0.0078125,
+    ('fl oz', 'qt'): 0.03125,
+    ('fl oz', 'pt'): 0.0625,
+}
+
+def convert_length_units(input_unit, output_unit, value):
+    if (input_unit, output_unit) in length_conversion_factors:
+        return value * length_conversion_factors[(input_unit, output_unit)]
+    else:
+        return None
+
+def convert_volume_units(input_unit, output_unit, value):
+    if (input_unit, output_unit) in volume_conversion_factors:
+        return value * volume_conversion_factors[(input_unit, output_unit)]
     else:
         return None
 
 def main():
-    input_unit = input("Select any input unit (mcm, mm, cm, dm, m, km, in, ft, yd, mi): ")
-    output_unit = input("Select desired output unit (mcm, mm, cm, dm, m, km, in, ft, yd, mi): ")
-    value = float(input("Enter the value to convert: "))
+    conversion_type = input("Select conversion type (length/volume): ").strip().lower()
 
-    result = convert_units(input_unit, output_unit, value)
+    if conversion_type == 'length':
+        input_unit = input("Select input unit (mcm, mm, cm, dm, m, km, in, ft, yd, mi): ")
+        output_unit = input("Select desired output unit (mcm, mm, cm, dm, m, km, in, ft, yd, mi): ")
+        value = float(input("Enter the value to convert: "))
+        
+        result = convert_length_units(input_unit, output_unit, value)
+        
+        if result is not None:
+            print(f"{value} {input_unit} is {result} {output_unit}")
+        else:
+            print("Conversion not supported.")
+
+    elif conversion_type == 'volume':
+        input_unit = input("Select input unit (L, mL, cm³, m³, gal, qt, pt, fl oz): ")
+        output_unit = input("Select desired output unit (L, mL, cm³, m³, gal, qt, pt, fl oz): ")
+        value = float(input("Enter the value to convert: "))
+        
+        result = convert_volume_units(input_unit, output_unit, value)
+        
+        if result is not None:
+            print(f"{value} {input_unit} is {result} {output_unit}")
+        else:
+            print("Conversion not supported.")
     
-    if result is not None:
-        print(f"{value} {input_unit} is {result} {output_unit}")
     else:
-        print("Conversion not supported.")
+        print("Invalid conversion type selected.")
 
     time.sleep(2)
 
