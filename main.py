@@ -1,4 +1,5 @@
 import os
+import time
 
 m2km = 0.001
 km2m = 1000
@@ -62,3 +63,5 @@ if (i1, i2) in conversion_factors:
     print(f"{value} {i1} is {result} {i2}")
 else:
     print("Conversion not supported.")
+
+time.sleep(2)
