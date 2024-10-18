@@ -1,6 +1,17 @@
 import time
 
 conversion_factors = {
+    ('mcm', 'mm'): 0.001,
+    ('mcm', 'cm'): 1e-4,
+    ('mcm', 'dm'): 1e-5,
+    ('mcm', 'm'): 1e-6,
+    ('mcm', 'km'): 1e-9,
+    ('mcm', 'in'): 3.937e-5,
+    ('mcm', 'ft'): 3.2808e-6,
+    ('mcm', 'yd'): 1.0936e-6,
+    ('mcm', 'mi'): 6.21363636364e-10,
+
+    ('mm', 'mcm'): 1000,
     ('mm', 'mm'): 1,
     ('mm', 'cm'): 0.1,
     ('mm', 'dm'): 0.01,
@@ -10,8 +21,9 @@ conversion_factors = {
     ('mm', 'ft'): 0.00328084,
     ('mm', 'yd'): 0.00109361,
     ('mm', 'mi'): 6.2137e-7,
-
+    
     ('cm', 'mm'): 10,
+    ('cm', 'mcm'): 10000,
     ('cm', 'cm'): 1,
     ('cm', 'dm'): 0.1,
     ('cm', 'm'): 0.01,
@@ -22,6 +34,7 @@ conversion_factors = {
     ('cm', 'mi'): 0.0000062137,
 
     ('dm', 'mm'): 100,
+    ('dm', 'mcm'): 100000,
     ('dm', 'cm'): 10,
     ('dm', 'dm'): 1,
     ('dm', 'm'): 0.1,
@@ -32,6 +45,7 @@ conversion_factors = {
     ('dm', 'mi'): 0.0000621371,
 
     ('m', 'mm'): 1000,
+    ('m', 'mcm'): 1000000,
     ('m', 'cm'): 100,
     ('m', 'dm'): 10,
     ('m', 'm'): 1,
@@ -42,6 +56,7 @@ conversion_factors = {
     ('m', 'mi'): 0.000621371,
 
     ('km', 'mm'): 1000000,
+    ('km', 'mcm'): 1e+9,
     ('km', 'cm'): 100000,
     ('km', 'dm'): 10000,
     ('km', 'm'): 1000,
@@ -52,6 +67,7 @@ conversion_factors = {
     ('km', 'mi'): 0.621371,
 
     ('in', 'mm'): 25.4,
+    ('in', 'mcm'): 25400,
     ('in', 'cm'): 2.54,
     ('in', 'dm'): 0.254,
     ('in', 'm'): 0.0254,
@@ -62,6 +78,7 @@ conversion_factors = {
     ('in', 'mi'): 0.0000157828,
 
     ('ft', 'mm'): 304.8,
+    ('ft', 'mcm'): 304800,
     ('ft', 'cm'): 30.48,
     ('ft', 'dm'): 3.048,
     ('ft', 'm'): 0.3048,
@@ -72,6 +89,7 @@ conversion_factors = {
     ('ft', 'mi'): 0.000189394,
 
     ('yd', 'mm'): 914.4,
+    ('yd', 'mcm'): 914400,
     ('yd', 'cm'): 91.44,
     ('yd', 'dm'): 9.144,
     ('yd', 'm'): 0.9144,
@@ -82,6 +100,7 @@ conversion_factors = {
     ('yd', 'mi'): 0.000568182,
 
     ('mi', 'mm'): 1609344,
+    ('mi', 'mcm'): 1.609344e+9,
     ('mi', 'cm'): 160934.4,
     ('mi', 'dm'): 16093.44,
     ('mi', 'm'): 1609.34,
@@ -99,8 +118,8 @@ def convert_units(input_unit, output_unit, value):
         return None
 
 def main():
-    input_unit = input("Select any input unit (mm, cm, dm, m, km, in, ft, yd, mi): ")
-    output_unit = input("Select desired output unit (mm, cm, dm, m, km, in, ft, yd, mi): ")
+    input_unit = input("Select any input unit (mcm, mm, cm, dm, m, km, in, ft, yd, mi): ")
+    output_unit = input("Select desired output unit (mcm, mm, cm, dm, m, km, in, ft, yd, mi): ")
     value = float(input("Enter the value to convert: "))
 
     result = convert_units(input_unit, output_unit, value)

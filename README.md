@@ -4,16 +4,15 @@
 
 ### Version:
 
-`V0.α1` alpha 10/18/24
+`V0.α2` alpha 10/18/24
 
 ### Previous Versions:
 
-`V0.α` alpha 10/18/24
+`V0.α1` alpha 10/18/24<br>`V0.α` alpha 10/18/24
 
 ---
 
 ## How to run:
-
 
 - Way 1:
 
