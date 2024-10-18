@@ -4,13 +4,16 @@
 
 ### Version:
 
-`V0.α` alpha 10/18/24
+`V0.α1` alpha 10/18/24
 
 ### Previous Versions:
 
-*None*
+`V0.α` alpha 10/18/24
 
-### How to run:
+---
+
+## How to run:
+
 
 - Way 1:
 
