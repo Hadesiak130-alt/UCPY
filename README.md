@@ -4,11 +4,17 @@
 
 ### Version:
 
-`V1.0` alpha 10/18/24
+`V1.1` alpha 10/19/24
 
 ### Previous Versions:
 
-`V0.α2` alpha 10/18/24<br>`V0.α1` alpha 10/18/24<br>`V0.α` alpha 10/18/24
+`V1.0` alpha 10/18/24
+
+`V0.α2` alpha 10/18/24
+
+`V0.α1` alpha 10/18/24
+
+`V0.α` alpha 10/18/24
 
 ---
 

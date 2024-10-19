@@ -107,65 +107,65 @@ length_conversion_factors = {
 # Conversion factors for volume
 volume_conversion_factors = {
     ('L', 'mL'): 1000,
-    ('L', 'cm³'): 1000,
-    ('L', 'm³'): 0.001,
+    ('L', 'cm^3'): 1000,
+    ('L', 'm^3'): 0.001,
     ('L', 'gal'): 0.264172,
     ('L', 'qt'): 1.05669,
     ('L', 'pt'): 2.11338,
     ('L', 'fl oz'): 33.814,
     
     ('mL', 'L'): 0.001,
-    ('mL', 'cm³'): 1,
-    ('mL', 'm³'): 1e-6,
+    ('mL', 'cm^3'): 1,
+    ('mL', 'm^3'): 1e-6,
     ('mL', 'gal'): 0.000264172,
     ('mL', 'qt'): 0.00105669,
     ('mL', 'pt'): 0.00211338,
     ('mL', 'fl oz'): 0.033814,
     
-    ('cm³', 'L'): 0.001,
-    ('cm³', 'mL'): 1,
-    ('cm³', 'm³'): 1e-6,
-    ('cm³', 'gal'): 0.000264172,
-    ('cm³', 'qt'): 0.00105669,
-    ('cm³', 'pt'): 0.00211338,
-    ('cm³', 'fl oz'): 0.033814,
+    ('cm^3', 'L'): 0.001,
+    ('cm^3', 'mL'): 1,
+    ('cm^3', 'm^3'): 1e-6,
+    ('cm^3', 'gal'): 0.000264172,
+    ('cm^3', 'qt'): 0.00105669,
+    ('cm^3', 'pt'): 0.00211338,
+    ('cm^3', 'fl oz'): 0.033814,
 
-    ('m³', 'L'): 1000,
-    ('m³', 'mL'): 1e6,
-    ('m³', 'cm³'): 1e6,
-    ('m³', 'gal'): 264.172,
-    ('m³', 'qt'): 1056.69,
-    ('m³', 'pt'): 2113.38,
-    ('m³', 'fl oz'): 33814,
+    ('m^3', 'L'): 1000,
+    ('m^3', 'mL'): 1e6,
+    ('m^3', 'cm^3'): 1e6,
+    ('m^3', 'gal'): 264.172,
+    ('m^3', 'qt'): 1056.69,
+    ('m^3', 'pt'): 2113.38,
+    ('m^3', 'fl oz'): 33814,
 
     ('gal', 'L'): 3.78541,
     ('gal', 'mL'): 3785.41,
-    ('gal', 'cm³'): 3785.41,
-    ('gal', 'm³'): 0.00378541,
+    ('gal', 'cm^3'): 3785.41,
+    ('gal', 'm^3'): 0.00378541,
     ('gal', 'qt'): 4,
     ('gal', 'pt'): 8,
     ('gal', 'fl oz'): 128,
 
     ('qt', 'L'): 0.946353,
     ('qt', 'mL'): 946.353,
-    ('qt', 'cm³'): 946.353,
-    ('qt', 'm³'): 0.000946353,
+    ('qt', 'cm^3'): 946.353,
+    ('qt', 'm^3'): 0.000946353,
     ('qt', 'gal'): 0.25,
     ('qt', 'pt'): 2,
     ('qt', 'fl oz'): 32,
 
     ('pt', 'L'): 0.473176,
     ('pt', 'mL'): 473.176,
-    ('pt', 'cm³'): 473.176,
-    ('pt', 'm³'): 0.000473176,
+    ('pt', 'cm^3'): 473.176,
+    ('pt', 'm^3'): 0.000473176,
     ('pt', 'gal'): 0.125,
     ('pt', 'qt'): 0.5,
     ('pt', 'fl oz'): 16,
 
     ('fl oz', 'L'): 0.0295735,
     ('fl oz', 'mL'): 29.5735,
-    ('fl oz', 'cm³'): 29.5735,
-    ('fl oz', 'm³'): 2.95735e-5,
+    ('fl oz', 'cm^3'): 29.5735,
+    ('fl oz', 'm^3'): 2.95735e-5,
     ('fl oz', 'gal'): 0.0078125,
     ('fl oz', 'qt'): 0.03125,
     ('fl oz', 'pt'): 0.0625,
@@ -199,8 +199,8 @@ def main():
             print("Conversion not supported.")
 
     elif conversion_type == 'volume':
-        input_unit = input("Select input unit (L, mL, cm³, m³, gal, qt, pt, fl oz): ")
-        output_unit = input("Select desired output unit (L, mL, cm³, m³, gal, qt, pt, fl oz): ")
+        input_unit = input("Select input unit (L, mL, cm^3, m^3, gal, qt, pt, fl oz): ")
+        output_unit = input("Select desired output unit (L, mL, cm^3, m^3, gal, qt, pt, fl oz): ")
         value = float(input("Enter the value to convert: "))
         
         result = convert_volume_units(input_unit, output_unit, value)
